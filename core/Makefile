@@ -161,7 +161,7 @@ $(INSTALLED_BUILD_PROP_TARGET): $(BUILDINFO_SH) $(INTERNAL_BUILD_ID_MAKEFILE) $(
 		        echo "# ADDITIONAL_BUILD_PROPERTIES" >> $@; \
 		        echo "#" >> $@; )
 	$(hide) $(foreach line,$(ADDITIONAL_BUILD_PROPERTIES), \
-		echo "$(line)" >> $@;)
+                echo "$(subst [SPACE],$(space),$(line))" >> $@;)
 
 build_desc :=
 
